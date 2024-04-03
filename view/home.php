@@ -41,7 +41,7 @@
                 <a class="text-decoration-none link-dark" href="view_pu_results.php">
                     <div class="card bg-success text-light p-3 p-md-4">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Total LGA Result</h5>
+                            <h5 class="card-title text-center">Polling Unit Results</h5>
                             <p class="text-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -57,4 +57,5 @@
     </div>
 </div>
 
-<?php include "../include/footer.php" ?>
+<?php unset($_SESSION['state']); 
+include "../include/footer.php" ?>
