@@ -6,7 +6,7 @@
     <div class="vh-100 d-flex justify-content-center align-items-center">
         <div class="row">
        
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 p-1">
                 <a class="text-decoration-none link-dark" href="view_total_results.php">
                     <div class="card bg-warning text-light p-3 p-md-4">
                         <div class="card-body">
@@ -22,7 +22,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 p-1">
                 <a class="text-decoration-none link-dark" href="view_total_results.php">
                     <div class="card bg-primary text-light p-3 p-md-4">
                         <div class="card-body">
@@ -37,7 +37,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 p-1">
                 <a class="text-decoration-none link-dark" href="view_pu_results.php">
                     <div class="card bg-success text-light p-3 p-md-4">
                         <div class="card-body">
