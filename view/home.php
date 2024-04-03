@@ -8,7 +8,7 @@
        
             <div class="col-12 col-md-4 p-1">
                 <a class="text-decoration-none link-dark" href="view_total_results.php">
-                    <div class="card bg-warning text-light p-3 p-md-4">
+                    <div class="card bg-warning text-light p-3 p-md-4" style="height: 170px;">
                         <div class="card-body">
                             <h5 class="card-title text-center">Store New Results</h5>
                             <p class="text-center">
@@ -24,7 +24,7 @@
             </div>
             <div class="col-12 col-md-4 p-1">
                 <a class="text-decoration-none link-dark" href="view_total_results.php">
-                    <div class="card bg-primary text-light p-3 p-md-4">
+                    <div class="card bg-primary text-light p-3 p-md-4" style="height: 170px;">
                         <div class="card-body">
                             <h5 class="card-title text-center">Total LGA Result</h5>
                             <p class="text-center">
@@ -39,7 +39,7 @@
             </div>
             <div class="col-12 col-md-4 p-1">
                 <a class="text-decoration-none link-dark" href="view_pu_results.php">
-                    <div class="card bg-success text-light p-3 p-md-4">
+                    <div class="card bg-success text-light p-3 p-md-4" style="height: 170px;">
                         <div class="card-body">
                             <h5 class="card-title text-center">Polling Unit Results</h5>
                             <p class="text-center">
