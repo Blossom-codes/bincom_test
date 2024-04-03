@@ -20,7 +20,7 @@
 
                                 ?>
                                     <option value="<?= $row['lga_id'] ?>"><?= $row['lga_name'] ?></option>
-
+     
                                 <?php
                                 }
                                 ?>
