@@ -27,7 +27,7 @@ class User_model extends Install_model
         $uniqueid = rand(1, 50);
 
         $polling_unit_number = "DT" . $lga_id . $ward_id . $polling_unit_id;
-        $date = date("Y-m-d");
+        $date = date("Y-m-d H:i:s");
 
         $sql = "INSERT INTO `polling_unit`(`polling_unit_id`, `ward_id`, `lga_id`, `uniquewardid`, `polling_unit_number`, `polling_unit_name`, `polling_unit_description`, `lat`, `long`, `entered_by_user`, `date_entered`, `user_ip_address`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $this->connect()->prepare($sql);
