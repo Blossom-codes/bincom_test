@@ -5,14 +5,14 @@
 <div class="container">
     <div class="vh-100 d-flex justify-content-center align-items-center">
         <div class="row">
-       
+
             <div class="col-12 col-md-4 p-1">
-                <a class="text-decoration-none link-dark" href="view_total_results.php">
+                <a class="text-decoration-none link-dark" href="store_new_results.php">
                     <div class="card bg-warning text-light p-3 p-md-4" style="height: 170px;">
                         <div class="card-body">
                             <h5 class="card-title text-center">Store New Results</h5>
                             <p class="text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-save">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-save">
                                     <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                                     <polyline points="17 21 17 13 7 13 7 21"></polyline>
                                     <polyline points="7 3 7 8 15 8"></polyline>
@@ -52,10 +52,12 @@
                     </div>
                 </a>
             </div>
-           
+
         </div>
     </div>
 </div>
 
-<?php unset($_SESSION['state']); 
+<?php unset($_SESSION['state']);
+unset($_SESSION['lga']);
+unset($_SESSION['ward']);
 include "../include/footer.php" ?>

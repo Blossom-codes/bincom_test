@@ -44,4 +44,8 @@ class User_contr extends User_model
             return false;
         }
     }
+    public function setPollingUnit($name, $desc, $lga_id, $ward_id, $uniquewardid)
+    {
+        return $this->newPollingUnit($name, $desc, $lga_id, $ward_id, $uniquewardid);
+    }
 }
