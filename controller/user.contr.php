@@ -48,4 +48,8 @@ class User_contr extends User_model
     {
         return $this->newPollingUnit($name, $desc, $lga_id, $ward_id, $uniquewardid);
     }
+    public function setPartyScore($uniqueid, $party_name, $party_score, $entered_by,$user_ip_address)
+    {
+        return $this->newPartyScore($uniqueid, $party_name, $party_score, $entered_by,$user_ip_address);
+    }
 }

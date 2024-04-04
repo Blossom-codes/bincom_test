@@ -29,9 +29,9 @@ class User_model extends Install_model
         $polling_unit_number = "DT" . $lga_id . $ward_id . $polling_unit_id;
         $date = date("Y-m-d");
 
-        $sql = "INSERT INTO `polling_unit`(`uniqueid`,`polling_unit_id`, `ward_id`, `lga_id`, `uniquewardid`, `polling_unit_number`, `polling_unit_name`, `polling_unit_description`, `lat`, `long`, `entered_by_user`, `date_entered`, `user_ip_address`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO `polling_unit`(`polling_unit_id`, `ward_id`, `lga_id`, `uniquewardid`, `polling_unit_number`, `polling_unit_name`, `polling_unit_description`, `lat`, `long`, `entered_by_user`, `date_entered`, `user_ip_address`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $this->connect()->prepare($sql);
-        if ($stmt->execute(["$uniqueid","$polling_unit_id", "$ward_id", "$lga_id", "$uniquewardid", "$polling_unit_number", "$name", "$desc", "", "", "", $date, ""])) {
+        if ($stmt->execute(["$polling_unit_id", "$ward_id", "$lga_id", "$uniquewardid", "$polling_unit_number", "$name", "$desc", "", "", "", $date, ""])) {
             if ($stmt->rowCount() > 0) {
                 $stmt = true;
             } else {

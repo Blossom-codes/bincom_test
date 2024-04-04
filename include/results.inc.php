@@ -70,22 +70,36 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['create_polling_unit'])
     $ward_id = $ward[0];
     $ward_unique_id = $ward[1];
 
- echo "<pre> " .  $name = $_POST['name'];
- echo "<pre> " .  $party = $_POST['party'];
- echo "<pre> " .  $partyScore = $_POST['score'];
- echo "<pre> " .  $pollingUnitName = $_POST['polling_unit_name'];
- echo "<pre> " .  $pollingUnitDesc = $_POST['polling_unit_desc'];
- echo "<pre> " .  $lga = $_SESSION['lga'];
- echo "<pre> " .  $ward_id;
- echo "<pre> " .  $ward_unique_id;
-    
+    echo "<pre> " .  $name = $_POST['name'];
+    echo "<pre> " .  $party = $_POST['party'];
+    echo "<pre> " .  $partyScore = $_POST['score'];
+    echo "<pre> " .  $pollingUnitName = $_POST['polling_unit_name'];
+    echo "<pre> " .  $pollingUnitDesc = $_POST['polling_unit_desc'];
+    echo "<pre> " .  $lga = $_SESSION['lga'];
+    echo "<pre> " .  $ward_id;
+    echo "<pre> " .  $ward_unique_id;
+
     $user = new User_contr;
     $stmt = $user->setPollingUnit($pollingUnitName, $pollingUnitDesc, $lga, $ward_id, $ward_unique_id);
+   
     if ($stmt) {
-        save_pop_up_success("Success", "Polling Unit was created successfully", "success", "Ok");
+        $user = new User_contr;
+        
+        $scoreStmt =  $user->setPartyScore(292, "$party", $partyScore, "$name", "");
+        if ($scoreStmt) {
+            save_pop_up_success("Success", "Polling Unit was created successfully", "success", "Ok");
+        } else {
+
+            save_pop_up_error("Error", "An error occurred", "error", "Ok");
+        }
     } else {
         save_pop_up_error("Error", "An error occurred", "error", "Ok");
     }
-    var_dump($stmt);
-    // header("location: ../view/store_new_results.php");
+    // var_dump($stmt);
+    unset($_SESSION['state']);
+    unset($_SESSION['lga']);
+    unset($_SESSION['ward']);
+    header("location: ../view/store_new_results.php");
+
+    
 }
