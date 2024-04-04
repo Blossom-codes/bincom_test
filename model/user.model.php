@@ -62,4 +62,6 @@ class User_model extends Install_model
         }
         return $stmt;
     }
+
+    #ORDER BY CLAUSE WITH DESC AND LIMIT 1
 }
