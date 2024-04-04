@@ -88,7 +88,7 @@
                                                 while ($row = $stmt->fetch()) {
 
                                                 ?>
-                                                    <option value="<?= $row['ward_id'] ."&".$row['uniqueid']?>"><?= $row['ward_name'] ?></option>
+                                                    <option value="<?= $row['ward_id'] . "&" . $row['uniqueid'] ?>"><?= $row['ward_name'] ?></option>
 
                                                 <?php
                                                 }
@@ -112,15 +112,34 @@
                                 ?>
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title fw-light">Finally</h5>
+                                            <h5 class="card-title fw-light">Last Step!</h5>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" name="name" class="form-control" id="name" placeholder="Staff Model College">
+                                                <label for="name">Full Name</label>
+                                            </div>
                                             <div class="form-floating mb-3">
                                                 <input type="text" name="polling_unit_name" class="form-control" id="polling_unit_name" placeholder="Staff Model College">
                                                 <label for="polling_unit_name">Polling Unit Name</label>
                                             </div>
+
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" name="polling_unit_desc" id="polling_unit_desc" placeholder="desc">
                                                 <label for="polling_unit_desc">Description</label>
                                             </div>
+                                         <div class="row mt-3">
+                                            <div class="col-12 col-md-6">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" name="party" class="form-control" id="party" placeholder="Staff Model College">
+                                                <label for="party">Party(Abbreviation)</label>
+                                            </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                            <div class="form-floating mb-3">
+                                                <input type="number" name="score" class="form-control" id="score" placeholder="Staff Model College">
+                                                <label for="score">Party Score</label>
+                                            </div>
+                                            </div>
+                                         </div>
                                             <div class="d-flex w-100">
                                                 <button type="submit" class="btn btn-outline-secondary mx-1 w-25 my-3" name="save_reset">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">

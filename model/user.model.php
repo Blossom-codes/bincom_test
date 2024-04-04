@@ -22,23 +22,44 @@ class User_model extends Install_model
     }
     protected function newPollingUnit($name, $desc, $lga_id, $ward_id, $uniquewardid)
     {
-        $result = false;
+        // $result = false;
         $polling_unit_id = rand(1, 25);
+        $uniqueid = rand(1, 50);
 
         $polling_unit_number = "DT" . $lga_id . $ward_id . $polling_unit_id;
+        $date = date("Y-m-d");
 
-
-        $sql = "INSERT INTO polling_units (`polling_unit_id`, `ward_id`, `lga_id`, `uniquewardid`, `polling_unit_number`, `polling_unit_name`, `polling_unit_description`) VALUES (?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO `polling_unit`(`uniqueid`,`polling_unit_id`, `ward_id`, `lga_id`, `uniquewardid`, `polling_unit_number`, `polling_unit_name`, `polling_unit_description`, `lat`, `long`, `entered_by_user`, `date_entered`, `user_ip_address`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $this->connect()->prepare($sql);
-        if ($stmt->execute([$polling_unit_id, $ward_id, $lga_id, $uniquewardid, $polling_unit_number, $name, $desc,])) {
+        if ($stmt->execute(["$uniqueid","$polling_unit_id", "$ward_id", "$lga_id", "$uniquewardid", "$polling_unit_number", "$name", "$desc", "", "", "", $date, ""])) {
             if ($stmt->rowCount() > 0) {
-                $result = true;
+                $stmt = true;
             } else {
-                $result = false;
+                $stmt = false;
             }
         } else {
             $stmt = null;
         }
-        return $result;
+        return $stmt;
+    }
+
+    protected function newPartyScore($uniqueid, $party_name, $party_score, $entered_by,$user_ip_address)
+    {
+        // $result = false;
+        
+        $date = date("Y-m-d");
+
+        $sql = "INSERT INTO `announced_pu_results`(`polling_unit_uniqueid`, `party_abbreviation`, `party_score`, `entered_by_user`, `date_entered`, `user_ip_address`) VALUES (?,?,?,?,?,?)";
+        $stmt = $this->connect()->prepare($sql);
+        if ($stmt->execute(["$uniqueid","$party_name", "$party_score", "$entered_by", "$date", "$user_ip_address"])) {
+            if ($stmt->rowCount() > 0) {
+                $stmt = true;
+            } else {
+                $stmt = false;
+            }
+        } else {
+            $stmt = null;
+        }
+        return $stmt;
     }
 }
